@@ -25,7 +25,7 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}">Beranda Chandra</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Web Perpustakaan Malang</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,14 +74,14 @@
           <form action="{% url 'ubah_brg' barangs.id %}" method="post">
               {% csrf_token %}
               {{form.as_p}}
-                <button type="submit" class="btn btn-primary">simpan</button>
-                <a href="/Vbrg" class="btn btn-danger">Kembali</a>   
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/Vbrg" class="btn btn-danger">Back</a>   
           </form>
         </div>
       </section>
     </div>
     <div class="container text-center pt-5 pb-5">
-      All Rights Reserved &copy; 2021
+      All Rights Reserved &copy; 2024
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
