@@ -14,7 +14,7 @@ def addbrg(request):
     form= FormBarang(request.POST)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         form = FormBarang()
         konteks = {
             'form' : form,
@@ -32,7 +32,7 @@ def addpinjam(request):
     form= FormPinjam(request.POST)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         form = FormPinjam()
         konteks = {
             'form' : form,
@@ -50,7 +50,7 @@ def addkembali(request):
     form= FormKembali(request.POST)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         form = FormKembali()
         konteks = {
             'form' : form,
@@ -93,7 +93,7 @@ def ubah_brg(request,id_barang):
     form= FormBarang(request.POST,instance=barangs)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         return redirect('ubah_brg',id_barang=id_barang)
  else  :
     form = FormBarang(instance=barangs)
@@ -109,7 +109,7 @@ def ubah_pinjam(request,id_pinjam):
     form= FormPinjam(request.POST,instance=pinjams)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         return redirect('ubah_pinjam',id_pinjam=id_pinjam)
  else  :
     form = FormPinjam(instance=pinjams)
@@ -125,7 +125,7 @@ def ubah_kembali(request,id_kembali):
     form= FormKembali(request.POST,instance=kembalis)
     if form.is_valid():
         form.save()
-        messages.success(request,"Data Berhasil di Input")
+        messages.success(request,"Data Berhasil di Tambahkan")
         return redirect('ubah_kembali',id_kembali=id_kembali)
  else  :
     form = FormKembali(instance=kembalis)
@@ -138,13 +138,13 @@ def ubah_kembali(request,id_kembali):
 def hapus_brg(request,id_barang):
     barangs=Barang.objects.filter(id=id_barang)
     barangs.delete()
-    messages.success(request,"Data terhapus")
+    messages.success(request,"Berhasil di Hapus")
     return redirect('Vbrg') 
 
 def hapus_pinjam(request,id_pinjam):
     pinjams=Pinjam.objects.filter(id=id_pinjam)
     pinjams.delete()
-    messages.success(request,"Data terhapus")
+    messages.success(request,"Berhasil di Hapus")
     return redirect('pinjam') 
 
 def hapus_kembali(request,id_kembali):
