@@ -35,15 +35,16 @@ class Kembali(models.Model):
     nama=models.CharField(max_length=8)
     tgl_pinjam=models.DateTimeField(auto_now_add=True)
     tgl_kembali=models.DateTimeField(auto_now_add=True)
-    kondisi=models.CharField(max_length=15)
+    kondisi_buku=models.CharField(max_length=15)
     
     def __str__(self):
-        return "{}. {}. {}" .format(self.id_buku,self.nama,self.kondisi)
+        return "{}. {}. {}" .format(self.id_buku,self.nama,self.kondisi_buku)
 
 class Member(models.Model):
     idmember=models.CharField(max_length=10)
     nama=models.CharField(max_length=25)
     alamat=models.CharField(max_length=30)
+    no_telp=models.IntegerField(max_length=20)
 
     def __str__(self):
         return "{}. {}. {}" .format(self.idmember,self.nama,self.alamat)
